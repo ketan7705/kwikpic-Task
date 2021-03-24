@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <!-- Descriptor tags -->
+    <!-- TODO: change the title -->
+    <title>kwikpic</title>
+
+    <!-- TODO: Add the title and tags -->
+
+    <!--build:css css/portal.min.css-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/css/montserrat.css" rel="stylesheet" />
+    <link href="assets/css/poppins.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--endbuild-->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <div class="container">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav>
+          <a href="index.html#benefits">Benefits</a>
+          <a href="index.html#how-work">How Kwikpic works</a>
+          <a href="index.html#what-say">Testimonials</a>
+          <a href="index.html#team">The Team</a>
+          <a href="index.html#contact">Contact Us</a>
+        </nav>
+        <a class="logo" href="index.html">
+          <img class="picture-logo" src="icon/sideLogo_compress.jpg" alt="" />
+        </a>
+
+        <a class="photograph-button" href="click.html">
+          <img
+            class="photograph-logo"
+            src="no-optimize-images/button.svg"
+            alt=""
+          />
+          <!-- <div class="tooltip mobile-only">
+               <span class="show-after-load tooltiptext hide-after-5s">
+		 Get your photographs from here
+               </span>
+          </div> -->
+
+          <span class="desktop-only get-your-photograph">
+            Get your Photographs
+            <img
+              class="photograph-logo0"
+              src="no-optimize-images/button.svg"
+              alt=""
+            />
+          </span>
+        </a>
+      </div>
+    </header>
+
+    <div class="shapes portal_1">
+      <img src="no-optimize-images/shapes_portal_1_sm.svg" alt="" />
+      <img src="no-optimize-images/shapes_portal_1_md.svg" alt="" />
+      <img src="no-optimize-images/shapes_portal_1_lg.svg" alt="" />
+    </div>
+
+    <div class="shapes portal_2">
+      <img src="no-optimize-images/shapes_portal_2_sm.svg" alt="" />
+      <img src="no-optimize-images/shapes_portal_2_md.svg" alt="" />
+      <img src="no-optimize-images/shapes_portal_2_lg.svg" alt="" />
+    </div>
+
+    <form id="my-form" action="">
+      <div class="container">
+        <div class="inputs">
+          <label for="ucode">
+            <span>U-Code</span>
+            <!-- <span
+		 ><img class="informIcon" src="no-optimize-images/info.svg" alt=""
+		 /></span>
+		 <div class="inform-quote tooltip">
+		   <span class="tooltiptext tooltipportal"
+			 >
+                     Ask the photographer for this unique code
+		   </span>
+		 </div> -->
+          </label>
+          <input
+            id="ucode"
+            name="ucode"
+            type="number"
+            placeholder="Enter the U-Code"
+            required
+            min="100000"
+            max="999999"
+          />
+
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+
+          <label for="email">Mail id</label>
+          <input
+            type="email"
+            placeholder="Enter your mail id"
+            name="email"
+            required
+          />
+
+          <label for="">Phone number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+          />
+        </div>
+
+        <div id="camera" class="photograph">
+          <!-- <img class="photograph-img" src="images/YT.png" alt="" /> -->
+          <video
+            id="video"
+            class="photograph-img"
+            width="720"
+            height="560"
+            autoplay
+          ></video>
+          <canvas
+            id="canvas2"
+            class="overlay faceapi photograph-img"
+            width="720"
+            height="560"
+          ></canvas>
+          <img
+            id="default-face-overlay"
+            src="images/face_overlay.png"
+            style="display: none"
+          />
+
+          <button id="click" type="button">click</button>
+          <img
+            id="cam"
+            alt="Camera captured image"
+            src=""
+            style="display: none"
+          />
+          <!-- TODO: Send the file on canvas -->
+          <canvas
+            id="canvas"
+            class="photograph-img"
+            style="display: none"
+          ></canvas>
+          <p id="message" class=""></p>
+          <button class="final-submit" type="submit">
+            Get your photographs
+          </button>
+        </div>
+      </div>
+    </form>
+    <div id="overlay">
+      <div class="spinner"></div>
+      <h2 id="loading_txt">Loading..</h2>
+    </div>
+
+    <!-- For gulp -->
+    <div
+      class="show-inform-quote show-nav non-scroll success fail"
+      style="display: none"
+    ></div>
+
+    <!--build:js js/click.min.js -->
+    <script src="assets/js/toggleNav.js"></script>
+    <script src="assets/js/submitForm.js"></script>
+    <script defer src="assets/js/face-api.min.js"></script>
+    <script defer src="assets/js/handleCamera.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
